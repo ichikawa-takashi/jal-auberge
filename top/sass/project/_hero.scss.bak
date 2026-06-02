@@ -1,0 +1,181 @@
+@use "../global" as *;
+
+.fv {
+  background-color: transparent;
+  width: 100%;
+  height: 700px;
+  visibility: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .fv {
+    height: 100vh;
+  }
+}
+
+.hero {
+  z-index: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 700px;
+  overflow: clip;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  .hero__slider--left {
+    grid-row: 1;
+  }
+  .hero__slider--right {
+    grid-row: 2;
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+}
+
+@media screen and (min-width: 768px) {
+    .hero {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+
+        .hero__slider--left,
+        .hero__slider--right {
+            grid-row: auto;
+        }
+        &::before{
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.hero__slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__slider-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  img {
+    display: block;
+    width: 120%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 0%;
+    position: relative;
+    z-index: 1;
+    transform: translateZ(0);
+    will-change: clip-path;
+  }
+}
+
+// ─── Left column: top→bottom wipe (inset) ───
+
+.hero__slider--left .hero__slider-item img {
+  clip-path: inset(0 0 100% 0);
+  object-position: 50% 0%;
+}
+
+.hero__slider--left .hero__slider-item.before img {
+  z-index: 2;
+  clip-path: inset(0 0 0 0);
+  object-position: 50% 70%;
+}
+
+.hero__slider--left .hero__slider-item.before:not(.active) img {
+  animation: heroSlide_before_left 13s ease-out forwards;
+}
+
+.hero__slider--left .hero__slider-item.active img {
+  z-index: 3;
+  animation: heroSlide_left 2s cubic-bezier(0, 0, 0.75, 1) both;
+}
+
+// ─── Right column: bottom→top wipe (inset) ───
+
+.hero__slider--right .hero__slider-item img {
+  clip-path: inset(100% 0 0 0);
+  object-position: 50% 100%;
+}
+
+.hero__slider--right .hero__slider-item.before img {
+  z-index: 2;
+  clip-path: inset(0 0 0 0);
+  object-position: 50% 30%;
+}
+
+.hero__slider--right .hero__slider-item.before:not(.active) img {
+  animation: heroSlide_before_right 13s ease-out forwards;
+}
+
+.hero__slider--right .hero__slider-item.active img {
+  z-index: 3;
+  animation: heroSlide_right 2s cubic-bezier(0, 0, 0.75, 1) both;
+}
+
+// ─── Keyframes ───
+
+@keyframes heroSlide_left {
+  0% {
+    clip-path: inset(0 0 100% 0);
+    object-position: 50% 85%;
+  }
+  50% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    object-position: 50% 70%;
+  }
+}
+
+@keyframes heroSlide_before_left {
+  0% {
+    object-position: 50% 70%;
+  }
+  100% {
+    object-position: 50% 20%;
+  }
+}
+
+@keyframes heroSlide_right {
+  0% {
+    clip-path: inset(100% 0 0 0);
+    object-position: 50% 15%;
+  }
+  50% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    object-position: 50% 30%;
+  }
+}
+
+@keyframes heroSlide_before_right {
+  0% {
+    object-position: 50% 30%;
+  }
+  100% {
+    object-position: 50% 80%;
+  }
+}

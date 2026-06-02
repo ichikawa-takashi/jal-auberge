@@ -1,0 +1,129 @@
+@use "../global"as *;
+
+.message {
+  position: relative;
+  z-index: 1;
+  --blur: 30px;
+  padding: 120px 0;
+  // background を削除
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.36);  // ← ここに移動
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    pointer-events: none;
+    z-index: -1;
+    -webkit-mask-image: radial-gradient(ellipse 100% 5% at 50% 0%, transparent 60%, black 100%);
+    mask-image: radial-gradient(ellipse 100% 5% at 50% 0%, transparent 60%, black 100%);
+  }
+}
+
+
+.message__title {
+    font-size: rem(40);
+    font-weight: 400;
+    writing-mode: vertical-lr;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255 255 255 / .8);
+}
+
+@media screen and (min-width: 768px) {
+    .message__title {
+        font-size: rem(90);
+    }
+}
+
+.message__inner {
+    --_inner: 20px;
+    width: fit-content;
+    max-width: calc(100% - var(--_inner) * 2);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.message__content {
+    --_gap: 28px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--_gap);
+}
+
+.message__content p {
+    font-size: rem(13);
+    letter-spacing: .03em;
+    line-height: 2.4;
+}
+
+// スクロール進捗で色が変わる文字（JSで1文字ずつ span.message__char に分割される）
+.message__char {
+    color: #000;
+    transition: color 0.15s ease-out; // スクロールに合わせてなめらかに
+
+    &.is-white {
+        color: rgb(255 255 255 / .8);
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .message {
+  position: relative;
+  z-index: 1;
+  --blur: 30px;
+    padding: 420px 0 200px;
+  // background を削除
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.36);  // ← ここに移動
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    pointer-events: none;
+    z-index: -1;
+    -webkit-mask-image: radial-gradient(ellipse 100% 30% at 50% 0%, transparent 70%, black 100%);
+    mask-image: radial-gradient(ellipse 100% 30% at 50% 0%, transparent 70%, black 100%);
+  }
+}
+
+    .message__inner {
+        --_inner: 160px;
+        gap: 138px;
+        align-items: flex-start;
+        flex-direction: row;
+    }
+
+    .message__content {
+        --_gap: 33px;
+        flex: 1;
+    }
+
+    .message__content p {
+        --_margin-left: 64px;
+        font-size: rem(18);
+        letter-spacing: .16em;
+
+        &:nth-child(2) {
+            margin-left: calc(var(--_margin-left) * 1);
+        }
+
+        &:nth-child(3) {
+            margin-left: calc(var(--_margin-left) * 2);
+        }
+
+        &:nth-child(4) {
+            margin-left: calc(var(--_margin-left) * 3);
+        }
+    }
+
+}

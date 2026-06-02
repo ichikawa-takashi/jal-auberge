@@ -1,0 +1,209 @@
+@use "../global" as *;
+
+// ================================
+// chef
+// ================================
+
+.chef {
+    color: var(--color-white-1);
+    background-color: var(--color-black-1);
+    padding: rem(96) 0;
+}
+
+// ================================
+// grand（グランシェフ）
+// SP: 画像上・テキスト下 / PC: 画像左・テキスト右
+// ================================
+
+.chef__grand {
+    display: flex;
+    flex-direction: column;
+    padding-top: rem(48);
+}
+
+.chef__grand-figure {
+    margin: 0;
+    overflow: hidden;
+}
+
+.chef__grand-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: top;
+}
+
+.chef__grand-content {
+    margin-top: rem(48);
+}
+
+.chef__grand-label {
+    font-family: var(--font-family-en);
+    font-size: rem(12);
+    letter-spacing: 0em;
+    line-height: 1;
+    color: rgba(#EDEDED, .6);
+}
+
+.chef__grand-name {
+    font-size: rem(20);
+    letter-spacing: 0em;
+    line-height: 1.6;
+    margin-top: rem(6);
+}
+
+.chef__grand-heading {
+    font-size: rem(32);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    margin-top: rem(16);
+}
+
+.chef__grand-body {
+    font-size: rem(14);
+    letter-spacing: .04em;
+    line-height: 2;
+    margin-top: rem(16);
+}
+
+// ================================
+// supervisor（監修シェフ）
+// SP: 画像＋名前横並び → 本文下 / PC: 画像＋名前左 → 本文右
+// ================================
+
+.chef__supervisor {
+    display: flex;
+    flex-direction: column;
+    margin-top: rem(40);
+    border: 1px solid rgba(#EDEDED, .3);
+}
+
+.chef__supervisor-profile {
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+}
+
+.chef__supervisor-figure {
+        flex: 0 0 min(calc(214 / 333 * 100%), rem(280));
+    margin: 0;
+    overflow: hidden;
+}
+
+.chef__supervisor-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: top;
+}
+
+.chef__supervisor-meta {
+    padding-top: rem(8);
+}
+
+.chef__supervisor-label {
+    font-size: rem(12);
+    letter-spacing: 0em;
+    line-height: 1.5;
+    color: rgba(#EDEDED, .6);
+}
+
+.chef__supervisor-name {
+    font-size: rem(20);
+    letter-spacing: 0em;
+    line-height: 1.6;
+}
+
+.chef__supervisor-body {
+    font-size: rem(12);
+    letter-spacing: .04em;
+    line-height: 2;
+    padding: rem(16) rem(15.5) rem(24);
+}
+
+// ================================
+// md（768px〜）
+// ================================
+
+@include mq(md) {
+    .chef {
+        padding-top: rem(160);
+        padding-bottom: rem(120);
+    }
+
+    // -- grand --
+
+    .chef__grand {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: rem(56);
+        padding-top: rem(64);
+    }
+
+    .chef__grand-figure {
+        flex: 0 0 calc(400 / 1084 * 100%);
+    }
+
+    .chef__grand-content {
+        flex: 1;
+        margin-top: 0;
+        padding-top: rem(26);
+    }
+    .chef__grand-name{
+        font-size: rem(24);
+        line-height: calc(40 / 24);
+    }
+
+    .chef__grand-heading {
+        font-size: rem(44);
+        margin-top: rem(16);
+    }
+
+    .chef__grand-body{
+        font-size: rem(16);
+    }
+
+    // -- supervisor --
+
+    .chef__supervisor {
+        flex-direction: row;
+        align-items: center;
+        gap: rem(0);
+        margin-top: rem(64);
+    }
+
+    .chef__supervisor-profile {
+        flex: 0 0 min(calc(437 / 1084 * 100%), rem(500));
+        gap: rem(48);
+    }
+
+    .chef__supervisor-figure {
+        width: auto;
+        flex: 0 0 calc(246 / 437 * 100%);
+    }
+
+    .chef__supervisor-img {
+    }
+
+    .chef__supervisor-meta {
+        padding-top: 0;
+        flex: 1;
+    }
+    .chef__supervisor-name{
+        font-size: rem(24);
+        margin-top: rem(4);
+    }
+
+    .chef__supervisor-body {
+        flex: 1;
+        font-size: rem(14);
+        margin-top: 0;
+        padding: rem(28) rem(63) rem(28) rem(47);
+        border-left: 1px solid rgba(#EDEDED, .3);
+    }
+}

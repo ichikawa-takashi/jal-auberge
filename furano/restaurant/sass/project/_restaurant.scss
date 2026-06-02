@@ -1,0 +1,196 @@
+@use "../global"as *;
+
+// ================================
+// restaurant
+// ================================
+
+.restaurant {
+    color: var(--color-white-1);
+    background: var(--color-black-1);
+    padding-top: rem(40);
+    padding-bottom: rem(56);
+}
+
+.restaurant__inner {}
+
+// ================================
+// header（タイトルエリア）
+// ================================
+
+.restaurant__header {
+    display: flex;
+    // flex-direction: column;
+    gap: rem(6);
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba($color: #ededed, $alpha: 0.3);
+}
+
+.restaurant__title-en {
+    font-family: var(--font-family-en);
+    font-size: rem(32);
+    font-weight: 400;
+    line-height: calc(70 / 56);
+    letter-spacing: .02em;
+}
+
+.restaurant__title-ja {
+    font-size: rem(16);
+    letter-spacing: .04em;
+    line-height: 1.6;
+    color: var(--color-white-1);
+    margin-top: rem(12);
+}
+
+
+.restaurant__top {
+    margin-top: 48px;
+    text-align: center;
+    contain: paint;
+}
+
+.restaurant__top-title01 {
+    font-size: rem(20);
+    line-height: calc(25 / 20);
+    letter-spacing: 0.02em;
+    font-family: var(--font-family-en);
+}
+
+.restaurant__top-title02 {
+    font-size: rem(50);
+    line-height: rem(63);
+    letter-spacing: 0.02em;
+    font-family: var(--font-family-en);
+}
+
+.restaurant__top-title03 {
+    font-size: rem(16);
+    line-height: 1.6;
+    letter-spacing: 0em;
+    white-space: nowrap;
+    margin-top: 10px;
+}
+
+
+// ================================
+// figure（メイン画像）
+// ================================
+
+.restaurant__figure {
+    width: 100%;
+    margin-top: rem(48);
+    overflow: hidden;
+}
+
+.restaurant__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 335 / 189;
+    object-fit: cover;
+}
+
+// ================================
+// content（テキストエリア）
+// ================================
+
+.restaurant__content {
+    padding-top: rem(40);
+}
+
+.restaurant__heading {
+    font-size: rem(32);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: .04em;
+}
+
+.restaurant__body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(4);
+    margin-top: rem(40);
+}
+
+.restaurant__text {
+    font-size: rem(16);
+    letter-spacing: .04em;
+    line-height: 2.4;
+}
+
+// ================================
+// md（768px〜）
+// ================================
+
+@include mq(md) {
+    .restaurant__inner {}
+
+    .restaurant {
+        padding-top: rem(72);
+        padding-bottom: rem(200);
+    }
+
+    .restaurant__header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-bottom: 20px;
+    }
+
+    .restaurant__title-en {
+        font-size: rem(52);
+    }
+
+    .restaurant__title-ja {
+        font-size: rem(20);
+        padding-bottom: rem(10);
+        margin-top: initial;
+    }
+
+    .restaurant__top {
+        margin-top: 80px;
+    }
+
+    .restaurant__top-title01 {
+        font-size: rem(34);
+        line-height: calc(43 / 34);
+    }
+
+    .restaurant__top-title02 {
+        font-size: rem(76);
+        line-height: rem(95);
+    }
+
+    .restaurant__top-title03 {
+        font-size: rem(26);
+        margin-top: 27px;
+        letter-spacing: 0.04em;
+    }
+
+    .restaurant__figure {
+        margin-top: rem(72);
+    }
+
+    .restaurant__image {
+        aspect-ratio: 1084 / 610;
+    }
+
+    .restaurant__content {
+        padding-top: rem(80);
+    }
+
+    .restaurant__heading {
+        font-size: rem(48);
+        line-height: 1.6;
+    }
+
+    .restaurant__body {
+        gap: 0;
+        margin-top: rem(56);
+    }
+
+    .restaurant__text {
+        font-size: rem(20);
+        line-height: 2.4;
+    }
+}

@@ -1,0 +1,341 @@
+@use "../global" as *;
+
+// ================================
+// gastronomy
+// ================================
+
+.gastronomy {
+    color: var(--color-white-1);
+    background-color: #4B4B4B;
+    padding-top: rem(96);
+    padding-bottom: rem(96);
+}
+
+// ================================
+// course（コースセクション）
+// SP: メディア上・テキスト下 / PC: テキスト左・メディア右
+// ================================
+
+.gastronomy__course {
+    display: flex;
+    flex-direction: column;
+    gap: rem(32);
+    padding-top: rem(48);
+}
+
+// SP: メディアを先に表示
+.gastronomy__course-media {
+    order: -1;
+}
+
+.gastronomy__course-content {
+    order: 1;
+}
+
+// -- content --
+
+.gastronomy__course-heading {
+    font-size: rem(28);
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: .04em;
+}
+
+.gastronomy__course-lead {
+    font-size: rem(13);
+    letter-spacing: .06em;
+    line-height: var(--line-height-large);
+    color: rgba(#EDEDED, .7);
+    margin-top: rem(20);
+}
+
+.gastronomy__course-body {
+    font-size: rem(14);
+    letter-spacing: .04em;
+    line-height: var(--line-height-large);
+    margin-top: rem(16);
+}
+
+.gastronomy__course-note {
+    font-size: rem(11);
+    letter-spacing: .06em;
+    line-height: 1.6;
+    color: rgba(#EDEDED, .5);
+    margin-top: rem(24);
+}
+
+// -- media --
+
+.gastronomy__course-main-figure {
+    margin: 0;
+    overflow: hidden;
+}
+
+.gastronomy__course-main-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 335 / 189;
+    object-fit: cover;
+}
+
+.gastronomy__course-grid {
+    display: grid;
+    grid-template-columns: 193fr 138fr;
+    gap: rem(4);
+    margin-top: rem(4);
+}
+
+.gastronomy__course-grid-figure {
+    margin: 0;
+    overflow: hidden;
+}
+
+.gastronomy__course-grid-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.gastronomy__course-grid-figure:has(.gastronomy__course-grid-img--01){
+    grid-area: 1 / 1 / 3 / 2;
+}
+.gastronomy__course-grid-figure:has(.gastronomy__course-grid-img--02){
+    grid-area: 1 / 2 / 2 / 3;
+}
+.gastronomy__course-grid-figure:has(.gastronomy__course-grid-img--03){
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.gastronomy__course-grid-img--01{
+
+}
+.gastronomy__course-grid-img--02{
+
+}
+.gastronomy__course-grid-img--03{
+
+}
+
+// ================================
+// ingredients（食材セクション）
+// ================================
+
+.gastronomy__ingredients {
+    margin-top: rem(64);
+    padding-top: rem(64);
+    border-top: 1px solid rgba(#EDEDED, 0.3);
+}
+
+.gastronomy__ingredients-header {
+    text-align: center;
+}
+
+.gastronomy__ingredients-heading {
+    font-size: rem(28);
+    font-weight: 400;
+    letter-spacing: .04em;
+    line-height: 1.6;
+}
+
+.gastronomy__ingredients-desc {
+    font-size: rem(13);
+    letter-spacing: .06em;
+    line-height: var(--line-height-large);
+    margin-top: rem(16);
+}
+
+// -- PC list（md〜で表示、SP非表示）--
+
+.gastronomy__ingredients-list {
+    display: none;
+    margin-top: rem(32);
+}
+
+// -- SP slider（SP表示、md〜非表示）--
+
+.gastronomy__ingredients-slider-wrapper {
+    margin-top: rem(32);
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    overflow: hidden;
+    position: relative;
+}
+
+.gastronomy__ingredients-slider {
+    overflow: hidden;
+}
+
+.gastronomy__ingredients-slider-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+}
+
+.gastronomy__ingredients-slider-item {
+    flex-shrink: 0;
+    width: clamp(200px, calc(450 / 1440 * 100vw), 450px);
+    margin-right: rem(4);
+}
+
+.gastronomy__ingredients-figure {
+    margin: 0;
+    overflow: hidden;
+}
+
+.gastronomy__ingredients-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.gastronomy__ingredients-slider-btn {
+    width: rem(29);
+    height: rem(29);
+    border-radius: 50%;
+    background-color:transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: rem(10);
+    margin-right: rem(20);
+    margin-left: auto;
+}
+
+// CSS pause/play icon
+.gastronomy__ingredients-slider-btn-icon {
+    display: block;
+    width: rem(10);
+    height: rem(12);
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: rem(3);
+        height: 100%;
+        background-color: var(--color-white-1);
+        border-radius: 1px;
+    }
+
+    &::before {
+        left: 0;
+    }
+
+    &::after {
+        right: 0;
+    }
+}
+
+// is-playing 以外（= 停止中）は再生アイコンに切り替え
+.gastronomy__ingredients-slider-btn:not(.is-playing) {
+    .gastronomy__ingredients-slider-btn-icon {
+        &::before {
+            width: 0;
+            height: 0;
+            background-color: transparent;
+            border-style: solid;
+            border-width: rem(6) 0 rem(6) rem(10);
+            border-color: transparent transparent transparent var(--color-white-1);
+            border-radius: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
+// ================================
+// md（768px〜）
+// ================================
+
+@include mq(md) {
+    .gastronomy {
+        padding-top: rem(160);
+        padding-bottom: rem(160);
+    }
+
+    // -- course --
+
+    .gastronomy__course {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: rem(48);
+        padding-top: rem(56);
+    }
+
+    .gastronomy__course-content {
+        order: 1;
+        flex: 0 0 calc(294 / 1084 * 100%);
+    }
+
+    .gastronomy__course-media {
+        order: 2;
+        flex: 1;
+    }
+
+    .gastronomy__course-heading {
+        font-size: rem(32);
+    }
+
+    .gastronomy__course-body {
+        margin-top: rem(40);
+        font-size: rem(16);
+        line-height: 2;
+    }
+
+    .gastronomy__course-main-img {
+        aspect-ratio: 742 / 422;
+    }
+    .gastronomy__course-grid{
+        grid-template-columns: 430fr 308fr;
+    }
+
+    .gastronomy__course-grid-img {
+        // aspect-ratio: 4 / 3;
+    }
+
+    // -- ingredients --
+
+    .gastronomy__ingredients {
+        margin-top: rem(80);
+        padding-top: rem(80);
+    }
+
+    .gastronomy__ingredients-heading {
+        font-size: rem(32);
+    }
+
+    .gastronomy__ingredients-desc {
+        font-size: rem(16);
+    }
+
+    // PC list を表示
+    .gastronomy__ingredients-list {
+        display: flex;
+        gap: rem(4);
+        margin-top: rem(48);
+    }
+
+    .gastronomy__ingredients-item {
+        flex: 1;
+    }
+
+    .gastronomy__ingredients-img {
+        aspect-ratio: 1 / 1;
+    }
+
+    // SP slider を非表示
+    .gastronomy__ingredients-slider-wrapper {
+        display: none;
+    }
+}

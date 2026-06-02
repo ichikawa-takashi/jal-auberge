@@ -1,0 +1,74 @@
+@use "../global" as *;
+
+.news{
+  padding: 80px 0;
+  background-color: var(--color-gray-bg);
+}
+
+@media screen and (min-width: 768px) {
+  .news{
+    padding: 120px 0;
+  }
+}
+
+.news__container{
+  --_inner-padding: 20px;
+  width: 100%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-right: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .news__container{
+      width: min( calc( 100% - var(--_inner-padding) * 2), 1312px);
+      margin-right: auto;
+    --_inner-padding: 40px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .news__container{
+    grid-template-columns: auto 1fr;
+    gap: 55px;
+    border-top: 1px solid var(--color-gray);
+  }
+}
+
+.news__header{
+  display: contents;
+}
+
+.news__header-title{
+  font-size: rem(32);
+  font-weight: 400;
+  font-family: var(--font-family-en);
+  text-transform: uppercase;
+  color: var(--color-red);
+  margin-left: 20px;
+}
+
+.news__header-link{
+  order: 2;
+  margin-inline: auto;
+}
+
+
+@media screen and (min-width: 1024px) {
+  .news__header{
+    padding-top: 54px;
+    display: block;
+  }
+
+  .news__header-title{
+    margin-bottom: 40px;
+    margin-left: initial;
+  }
+
+  .news__header-link{
+    order: initial;
+    margin-inline: 0;
+  }
+}

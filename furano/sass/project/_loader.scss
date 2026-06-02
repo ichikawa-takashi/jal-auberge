@@ -1,0 +1,93 @@
+@use "../global" as *;
+
+.is-loading .siteWrapper {
+  visibility: hidden;
+}
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: none;
+  background-color: #EDEDED;
+  mask-image: url(./images/page/mask-image.webp);
+  mask-repeat: no-repeat;
+  height: 230%;
+  mask-size: 100% 130%;      /* 横100%、縦350% */
+  mask-position: 0% 100%; 
+}
+
+
+.hero__text{
+    color: var(--color-white-1);
+    z-index: 1001;
+}
+
+.load-text{
+  color: var(--color-black-1);
+  opacity: 0;
+  z-index: 999999;
+}
+
+.hero__text,
+.load-text{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-family-en);
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.hero__text-sub,
+.load-text__sub{
+  font-size: rem(14);
+  line-height: 2;
+}
+
+.hero__text-main,
+.load-text__main{
+  font-size: rem(54);
+}
+
+.hero__text-open{
+    padding: 6px 8px 7px;
+    color: #EDEDED;
+    border: 1px solid #EDEDED;
+    font-size: rem(18);
+    line-height: rem(13);
+    margin-top: 10px;
+    font-family: var(--font-family-en);
+}
+
+@media screen and (min-width: 768px) {
+  .hero__text-sub,
+  .load-text__sub{
+    font-size: rem(18);
+    line-height: 2;
+  }
+
+  .hero__text-main,
+  .load-text__main{
+    font-size: rem(60);
+  }
+}
+
+// 1文字ずつアニメーション用：親で overflow を隠す
+.load-text__char {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.load-text__char-inner {
+  display: inline-block;
+}
+

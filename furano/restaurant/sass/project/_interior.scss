@@ -1,0 +1,130 @@
+@use "../global"as *;
+
+// ================================
+// interior
+// ================================
+
+.interior {
+    color: var(--color-white-1);
+    background-color: #4B4B4B;
+    padding: rem(96) 0;
+}
+
+.interior__lead {
+    gap: rem(24);
+}
+
+.interior__desc {
+    font-size: rem(16);
+    line-height: 2.4;
+    letter-spacing: -.05em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+// ================================
+// gallery
+// ================================
+
+.interior__gallery {
+    margin-top: rem(64);
+}
+
+.interior__figure {
+    margin: 0;
+    overflow: hidden;
+}
+
+.interior__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+// hero image
+.interior__figure--01 {
+    aspect-ratio: 335 / 176;
+}
+
+// mosaic grid（SP: 2列 / PC: 3列）
+.interior__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(4);
+    margin-top: rem(4);
+}
+
+.interior__figure--02 {}
+
+// .interior__figure--03 {
+//     aspect-ratio: 1;
+// }
+
+// .interior__figure--04 {
+//     aspect-ratio: 16 / 9;
+// }
+
+// .interior__figure--05 {
+//     aspect-ratio: 1;
+// }
+
+// ================================
+// md（768px〜）
+// ================================
+
+@include mq(md) {
+    .interior {
+        padding: rem(160) 0;
+    }
+
+    .interior__lead {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: rem(64);
+    }
+
+    .interior__desc {
+        text-align: left;
+        font-size: rem(20);
+        line-height: 2.4;
+    }
+
+    .interior__gallery {
+        margin-top: rem(56);
+    }
+
+    .interior__figure--01 {
+        aspect-ratio: 16 / 9;
+    }
+
+    // 3列グリッド: interior02が左に縦スパン、右側に03（上段2列）、04・05（下段各1列）
+    .interior__grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: rem(454) rem(454);
+        grid-template-areas:
+            "b c c"
+            "d d e";
+        gap: rem(4);
+        margin-top: rem(4);
+    }
+
+    .interior__figure--02 {
+        aspect-ratio: unset;
+        grid-area: b;
+    }
+
+    .interior__figure--03 {
+        aspect-ratio: unset;
+        grid-area: c;
+    }
+
+    .interior__figure--04 {
+        aspect-ratio: unset;
+        grid-area: d;
+    }
+
+    .interior__figure--05 {
+        aspect-ratio: unset;
+        grid-area: e;
+    }
+}

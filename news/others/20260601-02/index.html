@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','JLJS_GTM_dataLayer','GTM-NXT42N');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>$記事タイトル$｜お知らせ｜JALオーベルジュ</title>
+    <meta name="description" content="$記事のリード文・または要約テキスト$ 最新情報はJALオーベルジュの公式サイトをご確認ください。" />
+    <meta name="keywords" content="$記事固有キーワード$, JALオーベルジュ, オーベルジュ" />
+    <meta property="og:title" content="$記事タイトル$ | お知らせ | JALオーベルジュ" />
+    <meta property="og:description" content="$記事のリード文・または要約テキスト$ 最新情報はJALオーベルジュの公式サイトをご確認ください。" />
+    <meta property="og:image" content="https://jalauberge.jal.co.jp/news/images/common/ogp.png" />
+    <meta property="og:type" content="article" />
+    <link rel="icon" href="../../images/common/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Shippori+Mincho&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="../../js/script.js"></script>
+    <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABY9vkhUwmEXZ3uDbFqVuoSpQ_9ZV1Rqs&callback=initMap">
+    </script>
+    <link rel="stylesheet" href="../../reset.css" />
+    <link rel="stylesheet" href="../../style.css" />
+
+</head>
+
+
+<body id="body">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXT42N"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <svg style="display: none;">
+        <symbol id="icon-arrow" fill="none" viewBox="0 0 9 14">
+            <foreignObject height="34" width="29" x="-10" y="-10" />
+            <path d="m9 6.999-9-6.999 5.55797 6.999-5.55797 7.001z" fill="currentColor" fill-opacity=".8" />
+        </symbol>
+        <symbol id="icon-arrow-down" fill="none" viewBox="0 0 14 9">
+            <g transform="translate(14, 0) rotate(90)">
+                <path d="m9 6.999-9-6.999 5.55797 6.999-5.55797 7.001z" fill="currentColor" fill-opacity=".8" />
+            </g>
+        </symbol>
+        <symbol id="icon-svg" viewBox="0 0 9 14">
+            <foreignObject height="34" width="29" x="-10" y="-10" />
+            <path d="m9 6.999-9-6.999 5.55797 6.999-5.55797 7.001z" fill="inherit" fill-opacity=".8" />
+        </symbol>
+    </svg>
+    <div class="siteWrapper">
+        <header class="header">
+            <div class="header__inner">
+                <div class="header__main">
+                    <a href="../../../" class="header__logo">
+                        <img src="../../images/common/logo-black-red.svg" alt="JALオーベルジュロゴ">
+                    </a>
+                </div>
+                <button class="header__hamburger" aria-label="メニューを開く" id="hamburger">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <nav class="header__sp-nav" id="nav" aria-label="SPメニュー">
+                <ul class="header__sp-nav-list">
+                    <li class="header__sp-nav-item">
+                        <a href="../../../#concept">
+                            <div class="header__sp-nav-item-en">Concept</div>
+                            <div class="header__sp-nav-item-ja">コンセプト</div>
+                        </a>
+                    </li>
+                    <li class="header__sp-nav-item">
+                        <a href="../../../#about">
+                            <div class="header__sp-nav-item-en">About</div>
+                            <div class="header__sp-nav-item-ja">JAL Aubergeとは</div>
+                        </a>
+                    </li>
+                    <li class="header__sp-nav-item">
+                        <a href="../../../#location">
+                            <div class="header__sp-nav-item-en">Location</div>
+                            <div class="header__sp-nav-item-ja">ロケーション一覧</div>
+                        </a>
+                    </li>
+                    <li class="header__sp-nav-item">
+                        <a href="../../../#news">
+                            <div class="header__sp-nav-item-en">News</div>
+                            <div class="header__sp-nav-item-ja">お知らせ</div>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="header__sp-nav-list-bottom">
+                    <li class="header__sp-nav-item-bottom">
+                        <a href="">推奨環境</a>
+                    </li>
+                    <li class="header__sp-nav-item-bottom">
+                        <a href="">個人情報の取り扱い</a>
+                    </li>
+                    <li class="header__sp-nav-item-bottom">
+                        <a href="">サイト利用規約</a>
+                    </li>
+                </ul>
+                <a href="#" class="article-link article-link--nav" aria-label="記事リンクへ移動">
+                    <figure class="article-link-image">
+                        <img loading="lazy" src="../../images/common/sample-image-2.png" alt="記事イメージ">
+                    </figure>
+                    <div class="article-link-content">
+                        <time datetime="2026-12-31" class="article-link-time">2026.12.31</time>
+                        <p class="article-link-title">JAL Auberge 富良野 OPEN</p>
+                    </div>
+                    <div class="article-link-button">
+                        <svg width="9" height="14">
+                            <use href="#icon-svg"></use>
+                        </svg>
+                    </div>
+                </a>
+            </nav>
+        </header>
+        <main class="main">
+            <nav class="header__nav" aria-label="PCメニュー">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="../../../#concept">
+                            <div>Concept</div>
+                        </a></li>
+                    <li class="header__nav-item"><a href="../../../#about">
+                            <div>About</div>
+                        </a></li>
+                    <li class="header__nav-item"><a href="../../../#location">
+                            <div>Location</div>
+                        </a></li>
+                    <li class="header__nav-item"><a href="../../../#news">
+                            <div>News</div>
+                        </a></li>
+                </ul>
+            </nav>
+            <section class="section single-news">
+                <div class="sub-news__container">
+                    <div class="breadcrumb">
+                        <span>
+                            <a href="../../../">JALオーベルジュTOP</a>
+                        </span>
+                        <svg width="4" height="8" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 3.99943L0 0L2.47021 3.99943L0 8L4 3.99943Z" fill="#3E3E3E" />
+                        </svg>
+                        <span>
+                            <a href="../../others/">お知らせ</a>
+                        </span>
+                        <svg width="4" height="8" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 3.99943L0 0L2.47021 3.99943L0 8L4 3.99943Z" fill="#3E3E3E" />
+                        </svg>
+                        <span>
+                            <span href="">（仮）JALカード特約店関連</span>
+                        </span>
+                    </div>
+                    <div class="single-news__body">
+                        <figure class="single-news__thumbnail">
+                            <img src="../../images/common/sample-image.webp" alt="">
+                        </figure>
+                        <h1 class="single-news__title">
+                            （仮）JALカード特約店関連
+                        </h1>
+                        <div class="single-news__meta">
+                            <time datetime="2026-06-01" class="single-news__date">2026.06.01</time>
+                            <span class="single-news__category">
+                                お知らせ
+                            </span>
+                        </div>
+
+                        <div class="single-news__contents">
+                            <h2>H2タイトルが入ります</h2>
+                            <h3>H3タイトルが入ります</h3>
+                            <p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                            </p>
+                            <h2>H2タイトルが入ります</h2>
+                            <p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                            </p>
+                            <h3 class="mt-32">H3タイトルが入ります</h3>
+                            <p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                            </p>
+                            <p class="mt-48"><a href="">テキストリンクです。この文章はダミーです。</a></p>
+                            <p><a href="" target="_blank" rel="noopener noreferrer">外部テキストリンクです。この文章はダミーです。</a></p>
+                            <ul class="mt-48">
+                                <li>リストが入ります。リストが入ります。リストが入ります。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                                </li>
+                                <li>リストが入ります。リストが入ります。リストが入ります。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                                </li>
+                            </ul>
+                            <ol class="mt-48">
+                                <li>ナンバーリストが入ります。ナンバーリストが入ります。ナンバーリストが入ります。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                                </li>
+                                <li>ナンバーリストが入ります。ナンバーリストが入ります。ナンバーリストが入ります。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                                </li>
+                                <li>ナンバーリストが入ります。ナンバーリストが入ります。ナンバーリストが入ります。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                                </li>
+                            </ol>
+                            <div class="bg-white mt-48">
+                                補足テキストが入ります。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさこの文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                            </div>
+                            <figure class="mt-48">
+                                <img src="../../images/common/sample-image.jpg" alt="サンプル画像">
+                                <figcaption>写真の説明が入ります<br class="visibility--sp">
+                                    写真の説明が入ります写真の説明が入ります</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-news__button">
+                    <a href="../../../" class="sub-news__header-link button-2">
+                        <div class="button-2__text">JALオーベルジュTOPに戻る</div>
+                        <div class="button-2__icon-wrapper">
+                            <div class="button-2__icon">
+                                <svg>
+                                    <use href="#icon-arrow-down"></use>
+                                </svg>
+                                <svg class="button-2__icon-hover">
+                                    <use href="#icon-arrow-down"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <div class="mask"></div>
+        </main>
+        <footer class="footer">
+            <div class="footer__inner">
+                <div class="footer__top">
+                    <div class="footer__name">地の美。</div>
+                    <div class="footer__body">
+                        <a href="#body" class="footer__button">
+                            <div class="footer__button-text">Back to Top</div>
+                            <div class="footer__button-icon-wrapper">
+                                <svg class="footer__button-icon" width="9" height="14">
+                                    <use href="#icon-arrow"></use>
+                                </svg>
+                                <svg class="footer__button-icon-hover" width="9" height="14">
+                                    <use href="#icon-arrow"></use>
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="footer__logo">
+                            <a href="../../../">
+                                <picture>
+                                    <source srcset="../../images/common/logo-footer.png" type="image/png"
+                                        media="(min-width: 768px)">
+                                    <img loading="lazy" src="../../images/common/logo-footer-sp.png" alt="JALオーベルジュロゴ">
+                                </picture>
+                            </a>
+                        </div>
+                        <nav class="footer__nav">
+                            <ul class="footer__nav-list">
+                                <li class="footer__nav-item"><a href="https://www.jal.co.jp/jp/ja/footer/browser.html"
+                                        target="_blank" rel="noopener noreferrer">推奨環境</a></li>
+                                <li class="footer__nav-item"><a href="https://www.jal.co.jp/jp/ja/footer/security/"
+                                        target="_blank" rel="noopener noreferrer">個人情報の取り扱い</a></li>
+                                <li class="footer__nav-item"><a href="https://www.jal.co.jp/jp/ja/footer/policy/"
+                                        target="_blank" rel="noopener noreferrer">サイト利用規約</a></li>
+                            </ul>
+                            <ul class="footer__nav-list footer__nav-item--mails">
+                                <li class="footer__nav-item">
+                                    <a href="mailto:jalauberge@jal.com" class="footer__nav-link">
+                                        <div class="footer__nav-link-text">JALオーベルジュ事業全体に関するお問い合わせ</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="footer__copyright">
+                    <p class="footer__copyright-notice">※本サイトに掲載の写真・画像には、一部AIにより生成されたイメージを含み、実際とは異なる場合があります。</p>
+                    <p class="footer__copyright-text"><small>Copyright &copy; Japan Airlines. All rights
+                            reserved.</small></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

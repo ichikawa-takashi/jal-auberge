@@ -1,0 +1,19 @@
+{
+  "name": "jal-auberge_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch sass/style.scss:style.css --style=expanded --source-map",
+    "serve": "browser-sync start --server --files \"style.css, *.html, js/*.js\"",
+    "dev": "concurrently -k \"npm run sass\" \"npm run serve\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "concurrently": "^9.2.1",
+    "sass": "^1.97.3"
+  }
+}

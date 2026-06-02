@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','JLJS_GTM_dataLayer','GTM-NXT42N');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JALオーベルジュ｜その土地を味わうために、旅をする。</title>
+    <meta name="description"
+        content="JALオーベルジュは、その土地を知り尽くしたシェフが地域の食と風土を一皿に込める、滞在型レストランです。食を旅の主役に据えた上質な体験が、日本各地で始まります。" />
+    <meta name="keywords" content="JALオーベルジュ, オーベルジュ, 日本 オーベルジュ, 食と宿, 地産地消 宿泊, 滞在型レストラン, JAL 新事業, 地域食材 旅, 宿泊付きレストラン" />
+    <link rel="icon" href="./images/common/favicon.png" />
+    <meta property="og:title" content="JALオーベルジュ｜その土地を味わうために、旅をする。" />
+    <meta property="og:description"
+        content="JALオーベルジュは、その土地を知り尽くしたシェフが地域の食と風土を一皿に込める、滞在型レストランです。食を旅の主役に据えた上質な体験が、日本各地で始まります。" />
+    <meta property="og:image" content="./images/common/ogp.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="JALオーベルジュ｜その土地を味わうために、旅をする。" />
+    <meta name="twitter:description"
+        content="JALオーベルジュは、その土地を知り尽くしたシェフが地域の食と風土を一皿に込める、滞在型レストランです。食を旅の主役に据えた上質な体験が、日本各地で始まります。" />
+    <meta name="twitter:image" content="./images/common/ogp.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Shippori+Mincho&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script defer src="./js/script.js"></script>
+    <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABY9vkhUwmEXZ3uDbFqVuoSpQ_9ZV1Rqs&callback=initMap">
+    </script>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body id="body">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXT42N"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <svg style="display: none;">
+        <symbol id="icon-arrow" fill="none" viewBox="0 0 9 14">
+            <foreignObject height="34" width="29" x="-10" y="-10" />
+            <path d="m9 6.999-9-6.999 5.55797 6.999-5.55797 7.001z" fill="currentColor" fill-opacity=".8" />
+        </symbol>
+        <symbol id="icon-svg" viewBox="0 0 9 14">
+            <foreignObject height="34" width="29" x="-10" y="-10" />
+            <path d="m9 6.999-9-6.999 5.55797 6.999-5.55797 7.001z" fill="inherit" fill-opacity=".8" />
+        </symbol>
+    </svg>
+    <div class="siteWrapper">
+        <header class="header">
+            <div class="header__inner">
+                <div class="header__main">
+                    <a href="#body" class="header__logo">
+                        <img class="header__logo-img--shadow" src="./images/common/logo-shadow.svg" alt="JALオーベルジュロゴ">
+                        <img class="header__logo-img--red" src="./images/common/logo-red.svg" alt="" aria-hidden="true">
+                    </a>
+                </div>
+                <button class="header__hamburger" aria-label="メニューを開く" id="hamburger">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <nav class="header__sp-nav" id="nav" aria-label="SPメニュー">
+                <ul class="header__sp-nav-list">
+                    <li class="header__sp-nav-item">
+                        <a href="#concept">
+                            <div class="header__sp-nav-item-en">Concept</div>
+                            <div class="header__sp-nav-item-ja">コンセプト</div>
+                        </a>
+                    </li>
+                    <li class="header__sp-nav-item">
+                        <a href="#about">
+                            <div class="header__sp-nav-item-en">About</div>
+                            <div class="header__sp-nav-item-ja">JAL Aubergとは</div>
+                        </a>
+                    </li>
+                    <li class="header__sp-nav-item">
+                        <a href="#location">
+                            <div class="header__sp-nav-item-en">Location</div>
+                            <div class="header__sp-nav-item-ja">ロケーション一覧</div>
+                        </a>
+                    </li>
+                    <li class="header__sp-nav-item">
+                        <a href="#news">
+                            <div class="header__sp-nav-item-en">News</div>
+                            <div class="header__sp-nav-item-ja">お知らせ</div>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="header__sp-nav-list-bottom">
+                    <li class="header__sp-nav-item-bottom">
+                        <a href="">推奨環境</a>
+                    </li>
+                    <li class="header__sp-nav-item-bottom">
+                        <a href="">個人情報の取り扱い</a>
+                    </li>
+                    <li class="header__sp-nav-item-bottom">
+                        <a href="">サイト利用規約</a>
+                    </li>
+                </ul>
+                <a href="../furano/" class="article-link article-link--nav" aria-label="記事リンクへ移動">
+                    <figure class="article-link-image">
+                        <img loading="lazy" src="./images/top/sample-image-2.webp" alt="記事イメージ">
+                    </figure>
+                    <div class="article-link-content article-link-content--pc">
+                        <time datetime="2026-12-31" class="article-link-time">2026.12</time>
+                        <p class="article-link-title">JAL Auberge FURANO オープン</p>
+                    </div>
+                    <div class="article-link-content article-link-content--sp">
+                        <p class="article-link-title">2026.12&nbsp;&nbsp;&nbsp;&nbsp;JAL Auberge<br>FURANO オープン</p>
+                    </div>
+                    <div class="article-link-button">
+                        <svg width="9" height="14">
+                            <use href="#icon-svg"></use>
+                        </svg>
+                    </div>
+                </a>
+            </nav>
+        </header>
+        <main class="main">
+            <nav class="header__nav" aria-label="PCメニュー">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="#concept">
+                            <div>Concept</div>
+                        </a></li>
+                    <li class="header__nav-item"><a href="#about">
+                            <div>About</div>
+                        </a></li>
+                    <li class="header__nav-item"><a href="#location">
+                            <div>Location</div>
+                        </a></li>
+                    <li class="header__nav-item"><a href="#news">
+                            <div>News</div>
+                        </a></li>
+                </ul>
+            </nav>
+            <a href="../furano/" class="article-link article-link--top" aria-label="記事リンクへ移動">
+                <figure class="article-link-image">
+                    <img loading="lazy" src="./images/top/sample-image-2.webp" alt="記事イメージ">
+                </figure>
+                    <div class="article-link-content article-link-content--pc">
+                        <time datetime="2026-12-31" class="article-link-time">2026.12</time>
+                        <p class="article-link-title">JAL Auberge FURANO オープン</p>
+                    </div>
+                    <div class="article-link-content article-link-content--sp">
+                        <p class="article-link-title">2026.12&nbsp;&nbsp;&nbsp;&nbsp;JAL Auberge<br>FURANO オープン</p>
+                    </div>
+                <div class="article-link-button">
+                    <svg width="9" height="14">
+                        <use href="#icon-svg"></use>
+                    </svg>
+                </div>
+            </a>
+            <div class="section fv"></div>
+            <section class="hero">
+                <ul class="hero__slider hero__slider--left">
+                    <li class="hero__slider-item">
+                        <picture>
+                            <img src="./images/top/hero-image-1-1.webp" alt="木の家具が並ぶJALオーベルジュのラウンジ空間" loading="eager"
+                                fetchpriority="high">
+                        </picture>
+                    </li>
+                    <li class="hero__slider-item">
+                        <picture>
+                            <img src="./images/top/hero-image-2-1.webp" alt="緑の芝生に囲まれたJALオーベルジュ富良野の外観">
+                        </picture>
+                    </li>
+                    <li class="hero__slider-item">
+                        <picture>
+                            <img src="./images/top/hero-image-3-1.webp" alt="夕暮れに照らされるJALオーベルジュ富良野のエントランス">
+                        </picture>
+                    </li>
+                    <li class="hero__slider-item">
+                        <picture>
+                            <img src="./images/top/hero-image-4-1.webp" alt="富良野の山並みを一望できる客室">
+                        </picture>
+                    </li>
+                </ul>
+                <ul class="hero__slider hero__slider--right">
+                    <li class="hero__slider-item">
+                        <picture>
+                            <img src="./images/top/hero-image-1-2.webp" alt="煙の演出が幻想的なアミューズの盛り付け" loading="eager"
+                                fetchpriority="high">
+                        </picture>
+                    </li>
+                    <li class="hero__slider-item">
+                        <picture>
+                            <img src="./images/top/hero-image-2-2.webp" alt="富良野のラベンダー畑">
+                        </picture>
+                    </li>
+                    <li class="hero__slider-item">
+                        <picture>
+                            <img src="./images/top/hero-image-3-2.webp" alt="きのこと山菜を使ったフレンチのメインディッシュ">
+                        </picture>
+                    </li>
+                    <li class="hero__slider-item">
+                        <picture>
+                            <img src="./images/top/hero-image-4-2.webp" alt="朝焼けに染まる富良野の雪山と冬の田園風景">
+                        </picture>
+                    </li>
+                </ul>
+                <h1 class="hero__title">
+                    <p class="hero__title-sub">
+                        <span class="hero__title-sub--01">J</span>
+                        <span class="hero__title-sub--02">A</span>
+                        <span class="hero__title-sub--03">L</span>
+                        <span class="hero__title-sub--04">が</span>
+                        <span class="hero__title-sub--05">誘</span>
+                        <span class="hero__title-sub--06">う</span>
+                        <span class="hero__title-sub--07">、</span>
+                        <span class="hero__title-sub--08">日</span>
+                        <span class="hero__title-sub--09">本</span>
+                        <span class="hero__title-sub--10">の</span>
+                        <span class="hero__title-sub--11">新</span>
+                        <span class="hero__title-sub--12">し</span>
+                        <span class="hero__title-sub--13">い</span>
+                        <span class="hero__title-sub--14">「</span>
+                        <span class="hero__title-sub--15">食</span>
+                        <span class="hero__title-sub--16">」</span>
+                        <span class="hero__title-sub--17">と</span>
+                        <span class="hero__title-sub--18">「</span>
+                        <span class="hero__title-sub--19">宿</span>
+                        <span class="hero__title-sub--20">」</span>
+                        <span class="hero__title-sub--21">。</span>
+                    </p>
+                    <p class="hero__title-main">
+                        <span class="hero__title-main--1">そ</span>
+                        <span class="hero__title-main--2">の</span>
+                        <span class="hero__title-main--3">土</span>
+                        <span class="hero__title-main--4">地</span>
+                        <span class="hero__title-main--5">を</span>
+                        <br class="visibility--sp">
+                        <span class="hero__title-main--6">味</span>
+                        <span class="hero__title-main--7">わ</span>
+                        <span class="hero__title-main--8">う</span>
+                        <span class="hero__title-main--9">た</span>
+                        <span class="hero__title-main--10">め</span>
+                        <span class="hero__title-main--11">に</span>
+                        <span class="hero__title-main--12">、</span>
+                        <span class="hero__title-main--13">旅</span>
+                        <span class="hero__title-main--14">を</span>
+                        <span class="hero__title-main--15">す</span>
+                        <span class="hero__title-main--16">る</span>
+                        <span class="hero__title-main--17">。</span>
+                    </p>
+                </h1>
+                <div class="hero__controls">
+                    <ul class="hero__pagination">
+                        <li class="hero__pagination-item"><span class="hero__pagination-bar"></span></li>
+                        <li class="hero__pagination-item"><span class="hero__pagination-bar"></span></li>
+                        <li class="hero__pagination-item"><span class="hero__pagination-bar"></span></li>
+                        <li class="hero__pagination-item"><span class="hero__pagination-bar"></span></li>
+                    </ul>
+                    <button class="hero__pause-btn" aria-label="一時停止">
+                        <span class="hero__pause-icon"></span>
+                        <span class="hero__play-icon"></span>
+                    </button>
+                </div>
+            </section>
+            <section class="section message" id="concept">
+                <div class="message__inner">
+                    <h2 class="message__title">地の美。</h2>
+                    <div class="message__content">
+                        <p>その地でしか見られない、美しい風景のなかで、<br>その地でしか味わえない、美味しい食事のあと、<br>そのまま泊まることができる、『JALオーベルジュ』。
+                        </p>
+                        <p>その地にゆかりのあるシェフが振る舞う、<br>その地ならではの食材による料理を、<br>その地で造られたワインやお酒とともに。
+                        </p>
+                        <p>その地へ旅して、その地に泊まらなければ、<br>けして体験することができない、<br>かけがえのない美しい時間と、<br
+                                class="visibility--sp">忘れられない美しい記憶。</p>
+                        <p>日本の地にこだわり、<br
+                                class="visibility--sp">ともに旅をする歓びを分かち合いながら、<br>全国あらゆる地の魅力を体感してきたJALによる、<br>心からの"おもてなし"も添えて。
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="section about" id="about">
+                <div class="container">
+                    <div class="about-block-1">
+                        <div class="about__title about-block-1__title">
+                            <span class="about__title-en">Taste the Land</span>
+                            <h2 class="about__title-ja about__title-ja--ls003">
+                                JAL オーベルジュとは、<br />
+                                その土地を知り尽くしたシェフが<span class="about__title-ja--ls003-narrow">、</span><br />
+                                忘れられない体験を届ける<br />
+                                旅の拠点です。
+                            </h2>
+                        </div>
+                        <div class="about__image-1 js-size-down js-y-translate">
+                            <img loading="lazy" src="./images/top/about-image-1.webp" alt="風にそよぐ麦畑と遠くの山並み">
+                        </div>
+                    </div>
+                    <div class="about-block-2">
+                        <div class="about__image-2 js-size-down">
+                            <img loading="lazy" src="./images/top/about-image-2.webp" alt="グラスが並ぶレストランのテーブルセッティング">
+                        </div>
+                        <p class="about-block-2__text">
+                            地域の食と風土を味わうための場所。それがJALオーベルジュです。その土地の食材を、その土地にゆかりのある料理人が調理し、その土地の景色の中で味わう。料理人も、運営者も、できる限り地元から。だからこそ、ここでしか出会えない味があり、ここでしか感じられない時間があります。一皿に込めるのは、どこにでもある味ではなく、その土地だけが持つ物語。食と体験を旅の主役に据えた、上質な滞在型観光の拠点として、JALオーベルジュは日本各地に広がっていきます。
+                        </p>
+                    </div>
+
+                    <div class="about-block-3">
+                        <div class="about-block-3__left">
+                            <div class="about-block-3__top">
+                                <div class="about__title about-block-3__title">
+                                    <span class="about__title-en">Shaped by Soil and Season</span>
+                                    <h2 class="about__title-ja">
+                                        主役となるのは、<br>
+                                        その土地の記憶を<br>
+                                        宿した食材たち。
+
+                                    </h2>
+                                </div>
+                                <div class="about__image-3 js-size-down js-y-translate">
+                                    <img loading="lazy" src="./images/top/about-image-3.webp" alt="畑に実るとうもろこし">
+                                </div>
+                            </div>
+                            <p class="about-block-3__bottom">
+                                大都市にはなかなか届かない、小さな生産者の恵みがあります。その時期にしか出会えない、地域だけに伝わるわずかな旬があります。その土地で丁寧に育てられたものを、その土地で味わっていただきたい。当たり前でありながら、これまでなかなか実現できなかったことを、JALオーベルジュは丁寧に行っていきます。JALオーベルジュのシェフは「食の記憶」を大切に考えています。その土地にしかない気候特性、年ごとに異なる収穫の頃合い。メニューの一行では、到底伝えきれないものが料理の奥底に宿っています。味わうたびに、その土地のことが分かってくる。料理は、風土を理解するための、最もおいしい言語です。
+                            </p>
+                        </div>
+                        <div class="about-block-3__right js-size-down">
+                            <img loading="lazy" src="./images/top/about-image-4.webp" alt="ぶどう畑に垂れ下がる黒ぶどうの房">
+                        </div>
+                    </div>
+
+                    <div class="about-block-4">
+                        <div class="about__title about-block-4__title">
+                            <span class="about__title-en">More Than a Stay</span>
+                            <h2 class="about__title-ja">
+                                地域と深く<br>
+                                つながりながら、<br>
+                                土地の時間に溶け込んでいく。
+                            </h2>
+                        </div>
+                        <div class="about__image-4 js-size-down">
+                            <img loading="lazy" src="./images/top/about-image-5.webp" alt="緑の牧草地で草を食む乳牛の群れ">
+                        </div>
+                    </div>
+
+                    <div class="about-block-5">
+                        <div class="about-block-5__image js-size-down js-y-translate">
+                            <img loading="lazy" src="./images/top/about-image-6.webp" alt="大きな窓から山と湖を眺める3人のシルエット">
+                        </div>
+                        <div class="about-block-5__right">
+                            <div class="about-block-5__text">
+                                <p>
+                                    JALオーベルジュは、「宿泊施設付きのレストラン」です。ホテルにレストランがある、ではなく、ぜひともご堪能いただきたい料理があって、その料理を目的に訪れていただき、泊まれる場所がそこにある。それがJALオーベルジュの本質です。食後は、余韻を抱えたまま客室へ。夜空を眺めながら、今宵の料理の記憶をゆっくりと手繰り寄せるひととき。翌朝は、その土地ならではの空気と眺望で目覚め、その季節にしか出会えない朝食を迎える。一泊の時間をかけて、少しずつ、土地土地の深いところへと入っていく。「また、あの料理を食べたい。」その気持ちが生まれたとき、次の旅はもう始まっています。
+                                </p>
+                            </div>
+                            <div class="about-block-5__right-image js-size-down">
+                                <img loading="lazy" src="./images/top/about-image-7.webp" alt="富良野の夜空に流れる星のトレイル">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <section class="section location" id="location">
+                <div class="location__title">
+                    <span class="location__title-en">Location</span>
+                    <h2 class="location__title-ja">ロケーション</h2>
+                </div>
+                <div class="location__images">
+                    <picture>
+                        <img src="./images/top/location-image-1.webp" alt="JALオーベルジュ富良野の外観全景">
+                    </picture>
+                    <picture>
+                        <img src="./images/top/location-image-2.webp" alt="煙の演出が幻想的なアミューズの盛り付け">
+                    </picture>
+                </div>
+                <a href="../furano/" class="location__link">
+                    <div class="location__link-content">
+                        <div class="location__link-number" data-number="01">Location<span>01</span></div>
+                        <div class="location__link-logo">
+                            <picture>
+                                <source srcset="./images/common/logo.png" media="(min-width: 768px)">
+                                <img src="./images/common/logo-sp.png" alt="ロケーションロゴ">
+                            </picture>
+                        </div>
+                    </div>
+
+                    <div class="location__link-text">
+                        <div class="location__link-text-meta">
+                            <h3 class="location__link-text-title">JAL オーベルジュ 富良野</h3>
+                            <span class="location__link-text-open">2026年12月 OPEN</span>
+                        </div>
+                        <p class="location__link-text-description">
+                            北海道のへそ、中富良野。十勝岳連峰を望む北星山の森に生まれるオーベルジュです。<br class="visibility--pc">
+                            主役は、山の野生の食材と、この土地で育った和牛。<br class="visibility--pc">
+                            ここでしか出会えない旬を、富良野を知り尽くしたシェフが一皿に込めます。<br class="visibility--pc">
+                            言葉ではなく、味覚で伝わる富良野がここにあります。2026年12月グランドオープン。
+
+                        </p>
+                    </div>
+                    <div class="location__link-button">
+                        <div class="location__link-button-text">この施設を<br class="visibility--pc">詳しく見る</div>
+                        <div class="location__link-button-cover">
+                            <svg class="location__link-button-cover-default">
+                                <use href="#icon-arrow"></use>
+                            </svg>
+                            <svg class="location__link-button-cover-hover" width="9" height="14">
+                                <use href="#icon-arrow"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            </section>
+            <div class="section map-section">
+                <div id="map" class="map"></div>
+                <div id="info-card" class="info-card" aria-hidden="true"></div>
+            </div>
+            <p class="map-note">※現在開業準備中のため、施設名での<br class="visibility--sp">Googleマップ表示は順次反映予定です。</p>
+            <section class="section news" id="news">
+                <div class="news__container">
+                    <div class="news__header">
+                        <h2 class="news__header-title">News</h2>
+                        <a href="../news/" class="news__header-link button-1">
+                            <div class="button-1__text">詳しく見る</div>
+                            <div class="button-1__icon-wrapper">
+                                <div class="button-1__icon">
+                                    <svg>
+                                        <use href="#icon-arrow"></use>
+                                    </svg>
+                                    <svg class="button-1__icon-hover">
+                                        <use href="#icon-arrow"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="news__body cards-news">
+                        <article class="card-news">
+                            <a href="../news/others/20260601-01/">
+                                <div class="card-news__header">
+                                    <time class="card-news__date" datetime="2026-06-01">2026.06.01</time>
+                                    <div class="card-news__category">お知らせ</div>
+                                </div>
+                                <figure class="card-news__figure">
+                                    <picture>
+                                        <source srcset="./images/top/sample-image-2.webp" type="image/webp">
+                                        <img loading="lazy" src="./images/top/sample-image-2.webp" alt="ニュースイメージ">
+                                    </picture>
+                                </figure>
+                                <div class="card-news__content">
+                                    <h3 class="card-news__title">（仮）6/1 オープン告知</h3>
+                                    <p class="card-news__description">お知らせの詳細が入ります。お知らせの詳細が入ります。お知らせの詳細が入ります。</p>
+                                </div>
+                                <div class="card-news__button-cover">
+                                    <div class="card-news__button">
+                                        <div class="card-news__button-content">
+                                            <svg class="card-news__button-icon-default">
+                                                <use href="#icon-arrow"></use>
+                                            </svg>
+                                            <svg class="card-news__button-icon-hover">
+                                                <use href="#icon-arrow"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="card-news">
+                            <a href="../news/others/20260601-02/">
+                                <div class="card-news__header">
+                                    <time class="card-news__date" datetime="2026-06-01">2026.06.01</time>
+                                    <div class="card-news__category">お知らせ</div>
+                                </div>
+                                <figure class="card-news__figure">
+                                    <picture>
+                                        <source srcset="./images/top/sample-image-2.webp" type="image/webp">
+                                        <img loading="lazy" src="./images/top/sample-image-2.webp" alt="ニュースイメージ">
+                                    </picture>
+                                </figure>
+                                <div class="card-news__content">
+                                    <h3 class="card-news__title">（仮）JALカード特約店関連</h3>
+                                    <p class="card-news__description">お知らせの詳細が入ります。お知らせの詳細が入ります。お知らせの詳細が入ります。</p>
+                                </div>
+                                <div class="card-news__button-cover">
+                                    <div class="card-news__button">
+                                        <div class="card-news__button-content">
+                                            <svg class="card-news__button-icon-default">
+                                                <use href="#icon-arrow"></use>
+                                            </svg>
+                                            <svg class="card-news__button-icon-hover">
+                                                <use href="#icon-arrow"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="card-news">
+                            <a href="../news/others/20260601-03/">
+                                <div class="card-news__header">
+                                    <time class="card-news__date" datetime="2026-06-01">2026.06.01</time>
+                                    <div class="card-news__category">お知らせ</div>
+                                </div>
+                                <figure class="card-news__figure">
+                                    <picture>
+                                        <source srcset="./images/top/sample-image-2.webp" type="image/webp">
+                                        <img loading="lazy" src="./images/top/sample-image-2.webp" alt="ニュースイメージ">
+                                    </picture>
+                                </figure>
+                                <div class="card-news__content">
+                                    <h3 class="card-news__title">（仮）マイル交換関連</h3>
+                                    <p class="card-news__description">お知らせの詳細が入ります。お知らせの詳細が入ります。お知らせの詳細が入ります。</p>
+                                </div>
+                                <div class="card-news__button-cover">
+                                    <div class="card-news__button">
+                                        <div class="card-news__button-content">
+                                            <svg class="card-news__button-icon-default">
+                                                <use href="#icon-arrow"></use>
+                                            </svg>
+                                            <svg class="card-news__button-icon-hover">
+                                                <use href="#icon-arrow"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <div class="mask"></div>
+        </main>
+        <footer class="footer">
+            <div class="footer__inner">
+                <div class="footer__top">
+                    <div class="footer__name">地の美。</div>
+                    <div class="footer__body">
+                        <a href="#body" class="footer__button">
+                            <div class="footer__button-text">Back to Top</div>
+                            <div class="footer__button-icon-wrapper">
+                                <svg class="footer__button-icon" width="9" height="14">
+                                    <use href="#icon-arrow"></use>
+                                </svg>
+                                <svg class="footer__button-icon-hover" width="9" height="14">
+                                    <use href="#icon-arrow"></use>
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="footer__logo">
+                            <a href="#body">
+                                <picture>
+                                    <source srcset="./images/common/logo-footer.png" type="image/png"
+                                        media="(min-width: 768px)">
+                                    <img loading="lazy" src="./images/common/logo-footer-sp.png" alt="JALオーベルジュロゴ">
+                                </picture>
+                            </a>
+                        </div>
+                        <nav class="footer__nav">
+                            <ul class="footer__nav-list">
+                                <li class="footer__nav-item"><a href="https://www.jal.co.jp/jp/ja/footer/browser.html"
+                                        target="_blank" rel="noopener noreferrer">推奨環境</a></li>
+                                <li class="footer__nav-item"><a href="https://www.jal.co.jp/jp/ja/footer/security/"
+                                        target="_blank" rel="noopener noreferrer">個人情報の取り扱い</a></li>
+                                <li class="footer__nav-item"><a href="https://www.jal.co.jp/jp/ja/footer/policy/"
+                                        target="_blank" rel="noopener noreferrer">サイト利用規約</a></li>
+                            </ul>
+                            <ul class="footer__nav-list footer__nav-item--mails">
+                                <li class="footer__nav-item">
+                                    <a href="mailto:jalauberge@jal.com" class="footer__nav-link">
+                                        <div class="footer__nav-link-text">JALオーベルジュ事業全体に関するお問い合わせ</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="footer__copyright">
+                    <p class="footer__copyright-notice">※本サイトに掲載の写真・画像には、一部AIにより生成されたイメージを含み、実際とは異なる場合があります。</p>
+                    <p class="footer__copyright-text"><small>Copyright &copy; Japan Airlines. All rights
+                            reserved.</small></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

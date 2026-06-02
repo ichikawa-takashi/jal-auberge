@@ -1,0 +1,317 @@
+@use "../global"as *;
+
+// ================================
+// reserve
+// ================================
+
+.reserve {
+    color: var(--color-white-1);
+    background-color: #1e1e1e;
+    padding-block: rem(96) rem(72);
+}
+
+.reserve__header {
+    text-align: center;
+}
+
+.reserve__label {
+    font-family: var(--font-family-en);
+    font-size: rem(16);
+    letter-spacing: .02em;
+    line-height: calc(20 / 16);
+    color: rgba(#EDEDED, .6);
+    text-transform: uppercase;
+}
+
+.reserve__heading {
+    font-size: rem(24);
+    font-weight: 400;
+    letter-spacing: .04em;
+    line-height: 1.6;
+    margin-top: rem(12);
+}
+
+.reserve__cards {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+    margin-top: rem(40);
+}
+
+// ================================
+// card
+// ================================
+
+.reserve-card {
+    --_inner: 3px;
+    --_animation: 0;
+    --_animation-text: 0;
+    --_animation-svg: 0;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(#EDEDED, .25);
+    padding: rem(40) rem(37) rem(47);
+    color: var(--color-white-1);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - var(--_inner) * 2);
+        height: calc(100% - var(--_inner) * 2);
+        border: 1px solid rgba(#EDEDED, .25);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    &::after {
+        content: "";
+        width: 150%;
+        aspect-ratio: 1 / 1;
+        background-color: var(--color-black-1);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        z-index: 0;
+        border-radius: 50%;
+        transition: all .35s linear;
+        scale: var(--_animation);
+    }
+}
+
+.reserve-card__top,
+.reserve-card__divider,
+.reserve-card__info {
+    position: relative;
+    z-index: 2;
+}
+
+.reserve-card__info {
+    max-width: 413px;
+    width: 100%;
+    margin-inline: auto;
+}
+
+.reserve-card__icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(32);
+    transform: translateX(var(--_animation-text));
+    transition: transform .2s ease-out;
+}
+
+.reserve-card__icons svg {
+    width: rem(75);
+    height: rem(75);
+}
+
+.reserve-card__name {
+    text-align: center;
+    margin-top: rem(0);
+    position: relative;
+}
+
+.reserve-card__title-row {
+    display: inline-flex;
+    align-items: center;
+    gap: rem(14);
+}
+
+.reserve-card__title {
+    font-family: var(--font-family-en);
+    font-size: rem(32);
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 1.6;
+    transform: translateX(var(--_animation-text));
+    transition: transform .2s ease-out;
+}
+
+.reserve-card__arrow-wrapper {
+    position: absolute;
+    right: rem(-20);
+    top: 75%;
+    overflow: hidden;
+    width: rem(12);
+    height: rem(20);
+    flex-shrink: 0;
+}
+
+.reserve-card__arrow-default,
+.reserve-card__arrow-hover {
+    display: block;
+    width: 100%;
+    aspect-ratio: 12 / 20;
+    height: 100%;
+    transform: translateX(var(--_animation-svg));
+    transition: transform .2s ease-out;
+}
+
+.reserve-card__arrow-hover {
+    position: absolute;
+    top: 50%;
+    left: rem(-12);
+    translate: 0% -50%;
+}
+
+.reserve-card__subtitle {
+    font-size: rem(12);
+    letter-spacing: .12em;
+    line-height: 2;
+    color: #EDEDED;
+    transform: translateX(var(--_animation-text));
+    transition: transform .2s ease-out;
+}
+
+.reserve-card__divider {
+    border: none;
+    border-top: 1px solid rgba(#EDEDED, .2);
+    margin-top: rem(24);
+    max-width: 249px;
+    max-width: calc(100% - #{rem(10)});
+    width: 100%;
+    margin-inline: auto;
+}
+
+.reserve-card__info {
+    display: flex;
+    flex-direction: column;
+    gap: rem(4);
+    margin-top: rem(32);
+    max-width: 249px;
+    width: 100%;
+    margin-inline: auto;
+}
+
+.reserve-card__info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: rem(4);
+    font-size: rem(14);
+    letter-spacing: .04em;
+    line-height: 1.6;
+}
+
+.reserve-card__info-item svg {
+    flex-shrink: 0;
+    width: rem(18);
+    height: rem(18);
+    margin-top: rem(3);
+}
+
+.reserve-card__info-label {
+    flex: 1;
+}
+
+.reserve-card__info-value {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+// ================================
+// md（768px〜）
+// ================================
+
+@include mq(md) {
+    .reserve {
+        padding-top: rem(120);
+        padding-bottom: rem(120);
+    }
+
+    .reserve__inner {
+        width: min(calc(100% - var(--_inner) * 2), 1312px);
+    }
+
+    .reserve__label {
+        font-size: rem(16);
+    }
+
+    .reserve__heading {
+        font-size: rem(24);
+    }
+
+    .reserve__cards {
+        flex-direction: row;
+        align-items: stretch;
+        gap: rem(24);
+        margin-top: rem(48);
+        justify-content: space-between;
+    }
+
+    .reserve-card {
+        --_inner: 4px;
+        padding: rem(48) rem(48) rem(40);
+        flex: 0 0 48%;
+    }
+
+    .reserve-card:hover {
+        --_animation: 1;
+        --_animation-text: 12px;
+        --_animation-svg: #{rem(12)};
+    }
+
+    .reserve-card__icons {
+        gap: rem(28);
+    }
+
+    .reserve-card__icons svg {
+        width: rem(99);
+        height: rem(99);
+    }
+
+    .reserve-card__arrow-wrapper {
+        top: 37%;
+        right: rem(-10);
+    }
+
+    .reserve-card__name {
+        margin-top: rem(24);
+    }
+
+    .reserve-card__title {
+        font-size: rem(49);
+        line-height: rem(34);
+    }
+
+    .reserve-card__subtitle {
+        font-size: rem(14);
+        margin-top: rem(8);
+    }
+
+    .reserve-card__divider {
+        max-width: none;
+    }
+
+    .reserve-card__info {
+        max-width: 413px;
+        margin-top: rem(24);
+
+        span.visibility--pc {
+            display: inline;
+        }
+    }
+
+    .reserve-card__title-row {
+        gap: rem(20);
+    }
+
+    .reserve-card__info-item {
+        font-size: rem(14);
+    }
+}
+
+@include mq(xl) {
+    .reserve-card--stay {
+        flex: 0 0 calc(856 / 1312 * 100%);
+    }
+
+    .reserve-card--restaurant {
+        flex: 0 0 calc(400 / 1312 * 100%);
+    }
+}

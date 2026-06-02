@@ -1,0 +1,406 @@
+@use "../global"as *;
+
+/** z-index **/
+
+.fv {
+    z-index: -1;
+}
+
+.hero {
+    z-index: 1;
+    pointer-events: none;
+}
+
+.title-main {
+    // z-index: 3;
+}
+
+.message {
+    z-index: 2;
+}
+
+/*** title-main ***/
+
+.title-main {
+    position: fixed;
+    top: 460px;
+    left: 20px;
+    color: var(--color-white-1);
+    font-size: rem(18);
+    letter-spacing: 0.12em;
+    font-weight: 400;
+    line-height: 2;
+    z-index: 9;
+    height: fit-content;
+    white-space: nowrap;
+    letter-spacing: -0.07em;
+    //   display: none;
+
+    &__char--1 {
+        margin-left: -8px;
+    }
+
+    // 「
+    &__char--2 {}
+
+    // 食
+    &__char--3 {
+        letter-spacing: -0.5em;
+    }
+
+    // 」
+    &__char--4 {
+        letter-spacing: -0.5em;
+    }
+
+    // と
+    &__char--5 {
+        letter-spacing: 0em;
+    }
+
+    // 「
+    &__char--6 {}
+
+    // 泊
+    &__char--7 {
+        letter-spacing: -0.2em;
+    }
+
+    // ま
+    &__char--8 {}
+
+    // る
+    &__char--9 {
+        letter-spacing: -0.5em;
+    }
+
+    // 」
+    &__char--10 {}
+
+    // が
+    &__char--11 {}
+
+    // ひ
+    &__char--12 {}
+
+    // と
+    &__char--13 {}
+
+    // つ
+    &__char--14 {}
+
+    // に
+    &__char--15 {}
+
+    // な
+    &__char--16 {}
+
+    // っ
+    &__char--17 {}
+
+    // た
+    &__char--18 {}
+
+    // 、
+    &__char--19 {}
+
+    // 新
+    &__char--20 {}
+
+    // し
+    &__char--21 {}
+
+    // い
+    &__char--22 {
+
+        letter-spacing: 0;
+    }
+
+    // 旅
+    &__char--23 {
+    }
+
+    // の
+    &__char--24 {
+        letter-spacing: 0;
+    }
+
+    // 目
+    &__char--25 {
+        letter-spacing: 0;
+    }
+
+    // 的
+    &__char--26 {
+        letter-spacing: 0;
+    }
+
+    // 地
+    &__char--27 {
+        letter-spacing: 0;
+    }
+
+    // が
+    &__char--28 {
+        letter-spacing: 0.05em;
+    }
+
+    // 2
+    &__char--29 {
+        letter-spacing: 0.05em;
+    }
+
+    // 0
+    &__char--30 {
+        letter-spacing: 0.05em;
+    }
+
+    // 2
+    &__char--31 {
+        letter-spacing: 0.05em;
+    }
+
+    // 6
+    &__char--32 {
+        letter-spacing: 0.05em;
+    }
+
+    // 年
+    &__char--33 {
+        letter-spacing: 0.05em;
+    }
+
+    // 1
+    &__char--34 {
+        letter-spacing: 0.05em;
+    }
+
+    // 2
+    &__char--35 {}
+
+    // 月
+    &__char--36 {
+        letter-spacing: -0.4em;
+    }
+
+    // 、
+    &__char--37 {
+        letter-spacing: 0;
+    }
+
+    // 富
+    &__char--38 {
+        letter-spacing: 0;
+    }
+
+    // 良
+    &__char--39 {
+        letter-spacing: 0;
+    }
+
+    // 野
+    &__char--40 {}
+
+    // に
+    &__char--41 {}
+
+    // 生
+    &__char--42 {}
+
+    // ま
+    &__char--43 {}
+
+    // れ
+    &__char--44 {}
+
+    // ま
+    &__char--45 {}
+
+    // す
+    &__char--46 {}
+
+    // 。
+}
+
+@media screen and (min-width: 768px) {
+    .title-main {
+        font-size: rem(24);
+        top: auto;
+        bottom: 64px;
+        left: 64px;
+    }
+}
+
+/*** fv ***/
+
+.hero,
+.fv {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero__char {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+
+.fv {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (min-width: 768px) {
+
+    .hero,
+    .fv {
+        height: 100vh;
+        min-height: 722px;
+    }
+}
+
+.fv__slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba($color: #000000, $alpha: 0.4);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 4;
+    }
+}
+
+.fv__slide {
+    position: absolute;
+    inset: 0;
+    will-change: clip-path;
+    contain: paint;
+}
+
+.fv__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    will-change: transform;
+}
+
+.fv__controls {
+    --_bottom: 24px;
+    --_inner: 16px;
+    position: absolute;
+    bottom: var(--_bottom);
+    right: var(--_inner);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    z-index: 9;
+}
+
+.fv__pagination {
+    --_gap: 12px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--_gap);
+}
+
+@media screen and (min-width: 768px) {
+    .fv__controls {
+        --_bottom: 40px;
+        --_inner: 40px;
+    }
+}
+
+.fv__pagination-item {
+    flex: 1;
+    width: 40px;
+    height: 1px;
+    background-color: rgba(#fff, 0.3);
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: #fff;
+        transform-origin: left;
+        transform: scaleX(var(--progress, 0));
+    }
+}
+
+.control-button.fv__control-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: static;
+}
+
+/** message **/
+
+.message {
+    width: 100%;
+    height: 900px;
+    position: relative;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+    .message {
+        height: 100vh;
+        min-height: 722px;
+    }
+}
+
+.message__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.message__text {
+    position: absolute;
+    z-index: 10;
+    // color: #fff;
+    color: var(--color-white-1);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: calc(40 / 14 * 1em);
+    letter-spacing: 0.12em;
+    font-size: rem(14);
+    left: 20px;
+    bottom: 150px;
+
+    p {
+        line-height: 2.4;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .message__text {
+        left: 500px;
+        font-size: rem(18);
+        gap: 2em;
+        bottom: 0;
+    }
+}

@@ -1,0 +1,69 @@
+@use "../global" as *;
+
+// ================================
+// section-lead
+// 各セクション共通のタイトル＋紹介文コンポーネント
+// SP: 縦並び / PC: タイトル左・説明文右
+// ================================
+
+.section-lead {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+    // border-top: 1px solid rgba(#EDEDED, .2);
+}
+
+.section-lead__label {
+    font-size: rem(14);
+    letter-spacing: .04em;
+    line-height: 1.6;
+    color: rgba(#EDEDED, .6);
+}
+
+.section-lead__title {
+    font-family: var(--font-family-en);
+    font-size: rem(40);
+    font-weight: 400;
+    line-height: calc(50 / 40);
+    letter-spacing: .02em;
+    color: var(--color-white-1);
+    margin-top: rem(4);
+}
+
+.section-lead__desc {
+    font-size: rem(14);
+    letter-spacing: .04em;
+    line-height: 1.6;
+    color: rgba(#EDEDED, .6);
+}
+
+// ================================
+// md（768px〜）
+// ================================
+
+@include mq(md) {
+    .section-lead {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: rem(40);
+    }
+    .section-lead__label{
+        font-size: rem(16);
+    }
+
+    .section-lead__title-area {
+        flex-shrink: 0;
+    }
+
+    .section-lead__title {
+        font-size: rem(60);
+        line-height: calc(75 / 60);
+    }
+
+    .section-lead__desc {
+        text-align: right;
+        padding-bottom: rem(13);
+        // max-width: rem(340);
+    }
+}
